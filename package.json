@@ -1,0 +1,7 @@
+{
+  "name": "kachimake",
+  "private": true,
+  "dependencies": {
+    "bootstrap-icons": "^1.9.1"
+  }
+}

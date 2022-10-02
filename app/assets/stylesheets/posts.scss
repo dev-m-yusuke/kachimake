@@ -1,0 +1,55 @@
+#posts-index,#posts-new,#posts-create,#posts-update,#posts-destroy{
+
+h2{
+  margin-bottom: 30px;
+  }
+  .content-block{
+      margin: 15px auto;
+    .card{
+      .post{
+        margin: 15px auto;
+      }
+      .datetime{
+        text-align: right;
+        margin: 5px auto;
+      }
+      
+      .profile{
+    
+        .personal-data{
+          display: flex;
+          .name{
+            padding :5px;
+          }
+          .age{
+            padding :5px;
+          }
+        }
+        .work-history{
+          display: flex;
+          .job{
+            padding :5px;
+          }
+          .experience{
+            padding :5px;
+          }
+        }
+      }
+    }
+  }
+  
+  .content-form {
+    
+    textarea{
+      display: block;
+      width: 100%;
+      hight: auto;
+    }
+    .image-field{
+      margin: 15px auto;
+    }
+  }
+  
+  
+  
+}

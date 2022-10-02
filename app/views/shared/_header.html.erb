@@ -1,0 +1,39 @@
+<nav class="navbar navbar-light navbar-expand-md">
+  <%= link_to image_tag('logo/header_logo.png'), root_path,class:'logo-img' %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#responsiveMenu" aria-controls="responsiveMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-end" id="responsiveMenu">
+      <ul class="navbar-nav mr-auto">
+          <% if user_signed_in? %>
+          <li class="nav-item">
+              <%= link_to '新着投稿', posts_path, class:'nav-link' %>
+          </li>
+          <li class="nav-item">
+              <%= link_to '投稿する', new_post_path, class:'nav-link' %>
+          </li>
+          <li class="nav-item">
+              <%= link_to 'プロフィール', edit_user_registration_path, class:'nav-link' %>
+          </li>
+          
+          <li class="nav-item">
+              <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class:'nav-link' %>
+          </li>
+          
+          <% else %>
+          <li class="nav-item">
+              <%= link_to '新規登録', new_user_registration_path, class:'nav-link' %>
+          </li>
+          
+          <li class="nav-item">
+              <%= link_to 'ログイン', new_user_session_path, class:'nav-link' %>
+          </li>
+          <% end %>
+          
+          <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+      </ul>
+  </div>
+</nav>
