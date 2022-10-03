@@ -1,0 +1,36 @@
+<h2>プロフィールを作成する</h2>
+
+<div class="content-form">
+  <%= form_with model: @profile, local:true do |f| %>
+    <div class="d-flex flex-column">
+      <div class="p-2">
+      <div class="mb-4">
+      <%= f.label :name, 'ハンドルネーム' %>
+      <%= f.text_field :name, class:'form-control' %>
+      </div>
+      <div class="mb-4">
+      <%= f.label :age, '年齢' %>
+      <%= f.number_field :age, class:'form-control' %>
+      </div>
+      <div class="mb-4">
+      <%= f.label :occupation, '職種' %>
+      <%= f.text_field :occupation, class:'form-control' %>
+      </div>
+      <div class="mb-4">
+      <%= f.label :experience, '経験年数（年）' %>
+      <%= f.number_field :experience, class:'form-control' %>
+      </div>
+      <div class="mb-4">
+      <%= f.label :image, 'プロフィール画像' %>
+      <%= f.file_field :image, class:'image-field' %>
+      </div>
+
+      </div>
+      <div class="p-2">
+        <div class="d-grid gap-2 col-6 mx-auto">
+        <%= f.submit 'プロフィールを作成する', class:'btn btn-primary' %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
