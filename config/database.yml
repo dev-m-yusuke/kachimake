@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: kachimake_production
-  username: kachimake
-  password: <%= ENV['KACHIMAKE_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
