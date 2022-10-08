@@ -16,11 +16,6 @@
   <div class="container">
       <%= render 'shared/header'%>
       <%= render 'shared/toast'%>
-      <% if user_signed_in? %>
-      <div class="m-1 text-end">
-        ログイン中：<div class="fw-bold d-inline"><%= current_user.name %></div>さん
-      </div>
-      <% end %>
       <% if current_page?(root_path) %>
       <%= yield %>
       <% else %>

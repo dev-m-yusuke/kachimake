@@ -37,3 +37,10 @@
       </ul>
   </div>
 </nav>
+
+
+<% if current_user.present? %>
+  <p>こんにちは、<%= current_user.name %>さん</p>
+<% else %>
+  <p>こんにちは、ゲストさん！</p>
+<% end %>

@@ -5,5 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   has_one :profile, dependent: :destroy
-  delegate :name, :age, :occupation, :experience, to: :profile
+  has_many :posts, dependent: :destroy
+  
 end

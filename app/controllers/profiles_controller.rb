@@ -34,7 +34,7 @@ class ProfilesController < ApplicationController
   end
 
   def destroy
-    if @profile.update(profile_params)
+    if @profile.update
       redirect_to posts_path, notice:'プロフィールを削除しました。'
     else
       redirect_to posts_path, alert:'プロフィールを削除できませんでした。'

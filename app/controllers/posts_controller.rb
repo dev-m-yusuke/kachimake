@@ -3,10 +3,11 @@ class PostsController < ApplicationController
   before_action :find_post, only:[:edit, :show, :update, :destroy]
   
   def index
-    @posts = Post.all
+    @posts = Post.all.limit(10).order(created_at: :desc)
   end
   
   def new
+    return redirect_to new_profile_path, alert:'投稿するには、プロフィール登録が必要です。' if current_user.profile.blank?
     @post = Post.new
   end
   
@@ -15,15 +16,17 @@ class PostsController < ApplicationController
   end
   
   def edit
-    
+
   end
   
   def create
     @post = Post.new(post_params)
+    @post.user = current_user
+    # binding.pry
     if @post.save
       redirect_to posts_path, notice:'投稿できました。'
     else
-      render :new, alert:'投稿できませんでした。'
+      render :new
     end
   end
   
