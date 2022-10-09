@@ -40,7 +40,7 @@
 
 
 <% if current_user.present? %>
-  <p>こんにちは、<%= current_user.name %>さん</p>
+  <p class="text-end">こんにちは、<%= current_user.name %>さん</p>
 <% else %>
-  <p>こんにちは、ゲストさん！</p>
+  <p class="text-end">こんにちは、ゲストさん！</p>
 <% end %>
