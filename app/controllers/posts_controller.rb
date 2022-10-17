@@ -22,7 +22,6 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user = current_user
-    # binding.pry
     if @post.save
       redirect_to posts_path, notice:'投稿できました。'
     else
@@ -54,7 +53,7 @@ class PostsController < ApplicationController
   
   def post_params
     params.require(:post).permit(
-      :content,images: []
+      :title,:content,images: []
       )
   end
 end

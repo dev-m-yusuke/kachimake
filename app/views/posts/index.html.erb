@@ -6,29 +6,43 @@
     <div class="card-body">
   
       <h4 class="card-title">
-        質問事項ああああああああああああああああああ
+        <%= post.title %>
       </h4>
-      <div class="profile">
+      
+      <div class='row'>
+      <div class='col-2 align-self-center'>
+        <% if post.user.profile.image.attached? %>
+        <%= image_tag post.user.profile.image ,class:'rounded-circle img-responsive'%>
+        <% else %>
+        <%= image_tag 'icon/nouser.png' %>
+        <% end %>
+      </div>
+      <div class='col-10 align-self-center'>
+            <div class="profile">
         <div class="personal-data">
           <div class="name">
-            <%= post.user.name %>
+            名前：<%= post.user.profile.name %>
           </div>
   
           <div class="age">
-            年齢：35歳
+            年齢：<%= post.user.profile.age %>
           </div>
         </div>
         
         <div class="work-history">
           <div class="occupation">
-            職種：エンジニア
+            職種：<%= post.user.profile.occupation %>
           </div>
           
           <div class="experience">
-            経験年数：10年
+            経験年数：<%= post.user.profile.experience %>年
           </div>  
         </div>
       </div>
+      </div>
+      </div>
+
+
       <div class="post">
         <div class="card-text"><%= post.content %></div>
       </div>

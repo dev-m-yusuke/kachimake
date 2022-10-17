@@ -24,13 +24,30 @@
       <%= f.label :image, 'プロフィール画像' %>
       <%= f.file_field :image, class:'image-field' %>
       </div>
-
+      
+      <div class="row justify-content-start">
+      <div class='col-6 align-self-center'>
+      <span>現在、アップロードしている画像：</span>
+      </div>
+      <div class='col-6'>
+      <% if f.object.image.attached? %>
+      <div class="p-2">
+        <div class="d-grid mx-auto col-6 align-self-center">
+        <%= image_tag f.object.image %>
+        </div>
+      </div>
+      <% end %>
+      </div>
+      </div>
       </div>
       <div class="p-2">
         <div class="d-grid gap-2 col-6 mx-auto">
         <%= f.submit 'プロフィールを編集する', class:'btn btn-primary' %>
         </div>
       </div>
+      
+
+      
     </div>
   <% end %>
 </div>

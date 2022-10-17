@@ -4,6 +4,11 @@
   <%= form_with model: @post, local:true do |f| %>
     <div class="d-flex flex-column">
       <div class="p-2">
+      <%= f.label :title, 'タイトル' %>
+      <%= f.text_field :title, class:'form-control',rows:"2" %>
+      </div>
+      <div class="p-2">
+      <%= f.label :content, '投稿内容' %>
       <%= f.text_area :content, class:'form-control',rows:"10" %>
       <%= f.file_field :images, multiple: true, class:'image-field' %>
       </div>
