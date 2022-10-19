@@ -39,8 +39,3 @@
 </nav>
 
 
-<% if current_user.present? %>
-  <p class="text-end">こんにちは、<%= current_user.profile.name %>さん</p>
-<% else %>
-  <p class="text-end">こんにちは、ゲストさん！</p>
-<% end %>

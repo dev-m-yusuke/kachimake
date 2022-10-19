@@ -1,7 +1,7 @@
 class ProfilesController < ApplicationController
   before_action :authenticate_user!
   before_action :find_profile, only:[:edit,:show,:update,:destroy]
-  
+
   def show
 
   end
