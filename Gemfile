@@ -18,6 +18,7 @@ gem 'rails-i18n', '~> 5.1'
 gem 'devise'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
+gem 'font-awesome-sass'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

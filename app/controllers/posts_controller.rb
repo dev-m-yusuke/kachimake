@@ -4,6 +4,7 @@ class PostsController < ApplicationController
   
   def index
     @posts = Post.all.limit(10).order(created_at: :desc)
+    @posts = Post.all.includes(:favorite_users)
   end
   
   def new

@@ -49,7 +49,26 @@ h2{
       margin: 15px auto;
     }
   }
+  .like-link{
+    text-decoration: none;
+    white-space: nowrap;
+  }
   
+  .like-link:hover {
+    background-color: #fff!important;
+  }
+  
+  .like-btn {
+    font-size: 22px;
+    color: #808080;
+    margin-right: 8px;
+  }
+   
+  .unlike-btn {
+    font-size: 22px;
+    color: #e54747;
+    margin-right: 8px;
+  }
   
   
 }

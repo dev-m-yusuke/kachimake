@@ -21,21 +21,21 @@
             <div class="profile">
         <div class="personal-data">
           <div class="name">
-            <%= "名前： #{post.user.profile.name}" %>  
+            <%= "名前： #{post.user.name}" %>  
           </div>
   
           <div class="age">
-            <%= "年齢： #{post.user.profile.age}歳" %>  
+            <%= "年齢： #{post.user.age}歳" %>  
           </div>
         </div>
         
         <div class="work-history">
           <div class="occupation">
-            <%= "職種： #{post.user.profile.occupation}" %>  
+            <%= "職種： #{post.user.occupation}" %>  
           </div>
           
           <div class="experience">
-            <%= "経験年数： #{post.user.profile.experience}歳" %>  
+            <%= "経験年数： #{post.user.experience}歳" %>  
           </div>  
         </div>
       </div>
@@ -54,6 +54,29 @@
       <% end %>
       </div>
       <% end %>
+      
+      
+      <div class="d-flex flex-row bd-highlight mb-3">
+      <div class="p-2 bd-highlight">
+      <% if !post.favorite_users.include?(current_user) %>
+      <%= link_to favorites_path(post_id: post.id), method: :post do %>
+      <div class="d-flex like-link"><i class="fas fa-heart like-btn" ></i>
+      <% end %>
+      <%= post.favorite_users.count %>
+      </div>
+      <% else %>
+      <%= link_to favorites_path(post_id: post.id), method: :delete do %>
+      <div class="d-flex like-link"><i class="fa fa-heart like-link unlike-btn"></i>
+      <% end %>
+      <div class="like-link"><%= post.favorite_users.count %></div>
+      </div>
+      <% end %>
+  
+      </div>
+      <div class="p-2 bd-highlight">
+        <i class="fas fa-check"></i>
+      </div>
+      </div>
       
       <div class="datetime">
         <div class="card-text">投稿日時：<%= post.created_at.strftime("%Y年%m月%-d日 %-H時%-M分") %></div>

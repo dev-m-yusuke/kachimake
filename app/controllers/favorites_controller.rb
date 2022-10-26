@@ -11,7 +11,7 @@ class FavoritesController < ApplicationController
     if favorite.save
       redirect_to posts_path, success: 'いいねしました。'
     else
-      redirect_to posts_path, danger: 'いいね失敗しました'
+      redirect_to posts_path, danger: 'いいね失敗しま した'
     end
   end
 end
